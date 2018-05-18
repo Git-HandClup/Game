@@ -1,0 +1,122 @@
+<?php
+class content{
+	private $para;
+	private function add(){
+		$this->para->cnt=new stdclass;
+		$this->para->cnt->aid = '';
+		$this->para->cnt->content='';
+		$this->para->tmp->tab = $this->para->get->tab;
+        if(isset($this->para->post->fid)){
+        if(is_array($this->para->post->fid))
+                $this->para->post->fid=implode(',',$this->para->post->fid);
+            }
+		$this->para->cnt->content = $this->para->post->content;
+		unset($this->para->post->content);
+		
+		$this->para->tmp->str = $this->para->post;
+		$this->para->dbo->query($this->para->tmp,'insert');
+		$this->para->cnt->aid = $this->para->dbo->result->lastid ;
+		if($this->para->dbo->result->lastid > 0){
+			$this->para->tmp->tab .='_data';
+			$this->para->tmp->str = $this->para->cnt;
+			$this->para->dbo->query($this->para->tmp,'insert');
+			$this->para->tool->showmsg(
+				'200',
+				$this->para->cfg[$this->para->get->c]['suc'],
+				$this->para->get->tab,
+				'',
+				'closeCurrent'
+			);
+		}else{
+			$this->para->tool->showmsg(
+				'300',
+				$this->para->cfg[$this->para->get->c]['err']
+			);
+		}
+	}
+	private function clearx(){
+	    $this->clear();
+    }
+	private function clear(){
+		$this->para->tmp->tab = $this->para->get->tab;
+		$this->para->tmp->cond ='id in ('.$this->para->get->ids.')';
+		$this->para->dbo->query($this->para->tmp,'clear');
+		if($this->para->dbo->result->total >0 ){
+			$this->para->tool->showmsg(
+				'200',
+				$this->para->cfg[$this->para->get->c]['suc'],
+				$this->para->get->tab
+			);
+		}else{
+			$this->para->tool->showmsg(
+				'300',
+				$this->para->cfg[$this->para->get->c]['err']
+			);
+		}
+	}
+	private function order(){
+		$this->para->post = new stdclass;
+		$this->para->tmp->tab = $this->para->get->tab;
+		$this->para->pid = explode(',',$this->para->get->pid);
+		foreach(explode(',',$this->para->get->ids) as $k=>$v){
+			$this->para->tmp->cond = "id=".$v;
+			$this->para->post->pid = $this->para->pid[$k];
+			$this->para->tmp->str = $this->para->post;
+			$this->para->dbo->query($this->para->tmp,'update');
+		}
+		$this->para->tool->showmsg(
+			'200',
+			$this->para->cfg[$this->para->get->c],
+			$this->para->get->tab
+		);
+	}
+	private function edit(){
+	unset($this->para->post->xx);
+		$this->para->cnt=new stdclass;
+		$this->para->cnt->content='';
+		
+		$this->para->tmp->tab = $this->para->get->tab;
+        if(isset($this->para->post->fid)) {
+            if (is_array($this->para->post->fid))
+                $this->para->post->fid = implode(',', $this->para->post->fid);
+        }
+		$this->para->cnt->content = $this->para->post->content;
+		unset($this->para->post->content);
+		
+		$this->para->tmp->cond='id='.$this->para->get->ids;
+		
+		$this->para->tmp->str = $this->para->post;
+		$this->para->dbo->query($this->para->tmp,'update');
+		
+		//$this->para->cnt->aid = $this->para->dbo->result->lastid ;
+		if($this->para->dbo->result->total > 0){
+			$this->para->tmp->tab .='_data';
+			$this->para->tmp->cond = 'aid='.$this->para->get->ids;
+			$this->para->tmp->str = $this->para->cnt;
+			$this->para->dbo->query($this->para->tmp,'update');
+			$this->para->tool->showmsg(
+				'200',
+				$this->para->cfg[$this->para->get->c]['suc'],
+				$this->para->get->tab,
+				'',
+				'closeCurrent'
+			);
+		}else{
+			$this->para->tool->showmsg(
+				'300',
+				$this->para->cfg[$this->para->get->c]['err']
+			);
+		}
+		
+	}
+	public function run($get,$method = 'add'){
+		global $dbo,$cfg,$tool;
+		$this->para = $get;
+		$this->para->dbo = $dbo;
+		$this->para->tool = $tool;
+		$this->para->tmp = new stdclass;
+		$this->para->cfg = $cfg->language['content'];
+		$this->$method();
+	}
+}
+?>

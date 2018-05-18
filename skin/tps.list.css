@@ -1,0 +1,281 @@
+.itemlist
+{
+	margin:16px 0 0 0
+}
+.itemlist .left,
+.itemlist .right
+{
+	float:left;
+	width:820px
+	
+}
+.itemlist .right
+{
+	float:right;
+	width:350px
+}
+.itemlist .left dl,
+.itemlist .right dl
+{
+	padding:20px 0;
+	height:180px;
+	border-bottom:1px solid #eee
+}
+.itemlist .left dl dt,
+.itemlist .right dl dt
+{
+	float:left;
+	width:285px;
+	height:180px;
+	overflow:hidden
+}
+.itemlist .left dl dd,
+.itemlist .right dl dd
+{
+	float:right;
+	width:515px;
+	height:180px
+}
+.itemlist .left dl dd h4
+{
+	display:block;
+	height:36px;
+	line-height:30px
+}
+.itemlist .left dl dd h4 a
+{
+	float:left;
+	color:#9c3;
+	padding:0 20px;
+	border-radius:5px;
+	font-weight:400;
+	border:1px solid #9c3
+}
+.itemlist .left dl dd h4 em
+{
+	float:right
+}
+.itemlist .left dl dd h4 em strong
+{
+	color:#9c3;
+	margin:0 10px
+}
+.itemlist .left dl dd h4 em time
+{
+	color:#ccc;
+	font-weight:400
+}
+.itemlist .left dl dd h3,
+.itemlist .right dl dd h3
+{
+	line-height:44px
+}
+.itemlist .left dl dd h3 a,
+.itemlist .right dl dd h3 a
+{
+	color:#666
+}
+.itemlist .left dl dd h3 a:hover,
+.itemlist .right dl dd h3 a:hover
+{
+	color:#9c3
+}
+.itemlist .left dl dd p,
+.itemlist .right dl dd p
+{
+	color:#999;
+	line-height:22px
+}
+.itemlist .left dl dd p a,
+.itemlist .right dl dd p a
+{
+	border:0;
+	color:#9c3;
+	margin-left:10px
+}
+.itemlist .left dl dd p a:hover,
+.itemlist .right dl dd p a:hover
+{
+	border-bottom:1px solid #9c3
+}
+.itemlist .left dl dd label,
+.itemlist .right dl dd label
+{
+	color:#ccc;
+	line-height:30px;
+	display:block;
+	text-align:right
+}
+.itemlist .left dl dd label font,
+.itemlist .right dl dd label font
+{
+	margin-left:12px
+}
+.itemlist .right .catalog 
+{
+	padding:10px 0
+}
+.itemlist .right .catalog a
+{
+	color:#9c3;
+	margin:6px 4px;
+	padding:0 20px;
+	border-radius:5px;
+	display:inline-block;
+	border:1px solid #9c3;
+	font:400 14px/30px '微软雅黑'
+}
+.itemlist .right .catalog a.fixed,
+.itemlist .right .catalog a:hover
+{
+	color:#fff;
+	background:#f90;
+	border:1px solid #f90
+}
+.itemlist .right .focus
+{
+	height:300px;
+	position:relative
+}
+.itemlist .right .focus li
+{
+	height:300px
+}
+.itemlist .right .focus li a
+{
+	border:0
+}
+.itemlist .right .focus li a.t
+{	
+	border:0;
+	height:30px;
+	display:block;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	font:400 16px/30px '微软雅黑'
+}
+.itemlist .right .focus li p
+{
+	color:#aaa;
+	font:400 12px/20px '微软雅黑'
+}
+.itemlist .right .focus li p a
+{
+	border:0;
+	color:#9c3;
+	margin-left:10px
+}
+.itemlist .right .focus li p a:hover
+{
+	border-bottom:1px solid #9c3
+}
+.itemlist .right .focus li img
+{
+	height:218px
+}
+.itemlist .right .focus label
+{
+	left:-1px;
+	top:208px;
+	width:352px;
+	height:10px;
+	z-index:9;
+	display:block;
+	position:absolute
+}
+.itemlist .right .focus label a
+{
+	float:left;
+	width:86px;
+	height:10px;
+	display:block;
+	background:#fff;
+	cursor:pointer;
+	opacity:.6;
+	margin:0 1px
+}
+.itemlist .right .focus label a:hover
+{
+	border:0
+}
+.itemlist .right .focus label a.fixed
+{
+	background:#9c3
+}
+.itemlist .right .info ul
+{
+	padding:10px 0;
+}
+.itemlist .right .info li
+{
+	height:40px;
+	border-bottom:1px dashed #ccc
+}
+.itemlist .right .info li a
+{
+	float:left;
+	color:#999;
+	width:280px;
+	height:32px;
+	display:block;
+	overflow:hidden;	
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	font:400 14px/40px '微软雅黑'
+}
+.itemlist .right .info li i
+{
+	color:#f90;
+	background:none;
+	margin-right:4px
+}
+.itemlist .right .info li a:hover
+{
+	border:0;
+	color:#9c3
+}
+.itemlist .right .info  li time
+{
+	color:#ccc;
+	float:right;
+	font:400 14px/40px arial
+}
+.itemlist .right dl
+{
+	padding:10px 0;
+	border-bottom:1px dashed #eee
+}
+.itemlist .right dl,
+.itemlist .right dl dt,
+.itemlist .right dl dd
+{
+	height:80px
+}
+.itemlist .right dl dt
+{
+	width:120px
+}
+.itemlist .right dl dd
+{
+	width:220px
+}
+.itemlist .right dl dd h3
+{
+	font-size:14px;
+	line-height:22px;
+	font-weight:400
+}
+.itemlist .right dl dt a
+{
+	border:0
+}
+.itemlist .right dl dd label
+{
+	font-size:12px;
+	text-align:left
+}
+.itemlist .right dl dd label font
+{
+	margin:0 12px 0 0
+}

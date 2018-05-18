@@ -1,0 +1,806 @@
+/*背景图片*/
+
+/*头部*/
+.header{
+	border: 1px solid #eee;
+}
+.header .left{
+	float: left;
+	width: 140px;
+	height: 274px;
+	background: #eee;
+	padding: 10px 0 0 10px;
+}
+.header .left a{
+	color: #666;
+	height: 30px;
+	display: block;
+	border-bottom: 1px solid #fff;
+	font: 300 14px/30px "微软雅黑";
+}
+.header .left .fixed,
+.header .left a:hover{
+	background: #fff;
+}
+.header .left a i{
+	background: url(../img/ico.png) no-repeat;
+	top: 3px;
+	width: 17px;
+	height: 17px;
+	margin: 0 6px;
+}
+.header .left .net i{
+	background-position:0 0;
+}
+.header .left .pcg i
+{
+	background-position:-72px 0
+}
+.header .left .mob i
+{
+	background-position:-54px 0
+}
+.header .left .web i
+{
+	background-position:-18px 0
+}
+.header .left .fla i{
+	background-position: -36px 0;
+}
+.header .right{
+	width: 1036px;
+	float: right;
+	height: 284px;
+}
+.header .right .l{
+	float: left;
+	width: 174px;
+	margin: 0 20px;
+	padding: 20px 0;
+	background: #f33;
+	text-align: center;
+	position: relative;
+}
+.header .right .l i{
+	background: url(../img/ico.png) no-repeat;
+	top: 0;
+	right: 0;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	background-position: 0 -18px;
+}
+.header .right .l img{
+	width: 110px;
+	height: 110px;
+	margin: 10px 0;
+	border-radius: 15px;
+}
+.header .right .l span,
+.header .right .l h3 a{
+	color: #fff;
+	font: 400 16px/30px "微软雅黑";
+}
+.header .right .l p{
+	color: #FFFFFF;
+	margin-top: 10px;
+	padding: 0 20px;
+	text-align: left;
+	font: 400 12px/20px "微软雅黑";
+}
+.header .right .c{
+	float: left;
+	width: 395px;
+	height: 284px;
+	border-right: 1px solid #eee;
+}
+.header .right .r{
+	float: left;
+	width: 395px;
+	height: 290px;
+	padding-left: 30px;
+}
+.header .right label{
+	color: #fff;
+	width: 80px;
+	height: 26px;
+	display: block;
+	background: #f33;
+	text-align: center;
+	margin-bottom: 20px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	font: 400 14px/26px "微软雅黑";
+}
+.header .right .r label{
+	background: #9c3;
+}
+.header .right .c a,
+.header .right .r a{
+	color: #333;
+	width: 74px;
+	height: 98px;
+	overflow: hidden;
+	margin: 0 15px 20px 0;
+	text-align: center;
+	display: inline-block;
+	font: 400 12px/160% "微软雅黑";
+}
+.header .right .c a img,
+.header .right .r a img{
+	width: 74px;
+	height: 74px;
+	border-radius: 10px;
+}
+.header .right .c a:hover,
+.header .right .r a:hover{
+	color: #f33;
+}
+/*公告*/
+.ann{
+	margin: 15px 0;
+	height: 30px;
+}
+.ann span{
+	height: 30px;
+	float: left;
+	width: 160px;
+	display: block;
+	position: relative;
+}
+.ann span i{
+	background: url(../img/ico.png) no-repeat;
+	top: 3px;
+	width: 19px;
+	height: 17px;
+	margin-right:6px;
+	background-position: -126px 0px;
+}
+.ann span font{
+	font: 400 16px/30px "微软雅黑";
+}
+.ann span em{
+	color: #ccc;
+	font:400 14px/30px "微软雅黑";
+}
+.ann span em tt{
+	color: red;
+	font-size: 16px;
+}
+.ann span a{
+	top: 3px;
+	right: 0;
+	border-width: 5px;
+	border-style: solid;
+	position: absolute;
+	border-color: transparent transparent #f33 transparent;
+}
+.ann span .down{
+	top: 17px;
+	border-color: #f33 transparent transparent transparent;
+}
+.ann ul{
+	float: left;
+}
+.ann ul li{
+	float: left;
+	width: 313px;
+	height: 30px;
+	margin: 0 15px;
+}
+.ann ul li a{
+	line-height: 30px;
+	float: left;
+	color: #999;
+	width: 260px;
+	height: 30px;
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+}
+.ann ul li a:hover
+{
+	color:#f33
+}
+.ann ul li time
+{
+	color:#ccc;
+	float:right;
+	font:400 12px/30px arial
+}
+.topics{
+	margin: 16px 0;
+}
+.topics .topics_left,
+.topics .topics_right{
+	float: left;
+	width: 587px;
+	height:330px;
+	margin-bottom: 16px ;
+}
+.topics .topics_right{
+	float: right;
+}
+.topics .topics_left{
+	position: relative;
+}
+.topics .topics_left ul{
+}
+.topics .topics_left  li{
+	height: 330px;
+	width: 587px;
+	overflow: hidden;
+	position: relative;
+}
+.topics .topics_left li span,
+.topics .topics_left li .t{
+	height: 40px;
+	background: #000;
+	width: 587px;
+	display: block;
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+	opacity: 0.6;
+}
+.topics .topics_left li .t{
+	opacity: 1;
+	background: none;
+	z-index: 2;
+	color: #fff;
+	font: 400 14px/40px "微软雅黑";
+	text-indent: 14px;
+	width: 450px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.topics .topics_left label{
+	position: absolute;
+	z-index: 9;
+	right: 12px;
+	bottom: 14px;
+}
+.topics .topics_left label a{
+	float: left;
+	width: 12px;
+	height: 12px;
+	margin: 0 3px;
+	display: block;
+	background: #fff;
+	border-radius: 100%;
+}
+.topics .topics_left label a.fixed{
+	background: coral;
+}
+.topics .topics_right .a{
+	display: block;
+	padding-left: 5px;
+	color: #90c41f;
+	font: 400 30px/40px "微软雅黑";
+}
+.topics .topics_right font{
+	font: 400 15px/25px "微软雅黑";
+	color: #666;
+	padding: 10px 0px;
+	display: block;
+}
+.topics .topics_right font .a{
+	font: 400 15px/25px "微软雅黑";
+	display: inline-block;
+}
+.topics .topics_right .p1{
+	border-top: 1px dashed #ccc;
+}
+.topics .topics_right p{
+	font: 400 16px/30px "微软雅黑";
+	text-indent: 20px;
+}
+.topics .topics_right p a{
+	color: #333;
+}
+.topics .topics_right p time{
+	float: right;
+	color: #999;
+}
+.game{
+	margin-bottom: 16px;
+}
+.game .frame dl{
+	float: left;
+	width: 285px;
+	height: 280px;
+	margin: 16px 16px 0 0;
+}
+.game .frame dl.x{
+	margin: 16px 0px 0 0;
+}
+.game .frame dl dt{
+	float: left;
+	width: 285px;
+	height: 240px;
+	overflow: hidden;
+}
+.game .frame dl dd{
+	width: 285px;
+	height: 80px;
+	float: right;
+}
+.game .frame dl dd em,
+.game .frame dl dd span,
+.game .frame dl dd label{
+	font-size: 12px;
+	float: left;
+	font: 400 16px/40px "微软雅黑";
+	color: #9c3;
+}
+.game .frame dl dd em{
+	width: 100px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.game .frame dl dd em a{
+	color: #999;
+}
+.game .frame dl dd span {
+	margin: 0 10px;
+	font-size: 12px;
+}
+.game .frame dl dd span a{
+	color: #9c3;
+	font-size: 12px;
+}
+.game .frame dl dd em a:hover,
+.game .frame dl dd span a:hover{
+	color: #9c3;
+	border-bottom: 1px solid #99CC33;
+}
+.game .frame dl dd label{
+	float: right;
+}
+.game .frame dl dd label a{
+	color: #999;
+	width: 46px;
+	height: 22px;
+	text-align: center;
+	display: inline-block;
+	border: 1px solid #ccc;
+	font: 400 12px/24px "微软雅黑";
+}
+.game .frame dl dd label a.m{
+	color: #fff;
+	background: #9c6;
+	border: 1px solid #9c6;
+}
+.game .frame dl dd label a.x:hover{
+	color: #99CC33;
+	border: 1px solid #9c6;
+}
+.news{
+	margin-top: 16px;
+}
+.news .n_left,
+.news .n_center,
+.news .n_right{
+	float: left;
+	width: 428px;
+}
+.news .n_center{
+	margin: 0 16px;
+}
+.news .n_right{
+	width: 302px;
+}
+.news .n_left h4{
+	display: block;
+	font: 400 14px/40px "微软雅黑";
+}
+.news .n_left h4 a.c{
+	color: #fff;
+	background: #fc3;
+	padding: 2px 8px;
+}
+.news .n_left h4 a.a{
+	color: #9c3;
+	width:344px;
+	display:block;
+	float:right;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+.news .n_left h4 a.n{
+	background: #903;
+}
+.news .n_left h4 a.m{
+	background: #F75655;
+}
+.news .n_left dl{
+	height: 95px;
+	margin: 10px 0;
+}
+.news .n_left dl dt{
+	float: left;
+	width: 150px;
+	height: 95px;
+	overflow: hidden;
+	position: relative;
+}
+.news .n_left dl dt span{
+	left: 0;
+	bottom: 0;
+	z-index: 1;
+	width: 150px;
+	height: 24px;
+	display: block;
+	position: absolute;
+	background: #000;
+	opacity: 0.6;
+}
+.news .n_left dl dt a.t{
+	width: 138px;
+	text-align: center;
+	left: 0;
+	bottom: 0;
+	z-index: 2;
+	color: #fff;
+	height: 24px;
+	display: block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	position: absolute;
+	font: 400 12px/24px "微软雅黑";
+}
+.news .n_left dl dt a.t:hover{
+	color: #9c3;	
+}
+.news .n_left dl dd{
+	float: right;
+	width: 266px;
+	height: 95px;
+}
+.news .n_left dl dd a{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 266px;
+	display: inline-block;
+	height: 18px;
+	font: 400 14px/24px "微软雅黑";
+}
+
+.news .n_left dl dd  a{
+	color:#555 ;
+}
+.news .n_left dl dd  a:hover{
+	color: #9c3;
+}
+.news .n_center ul{
+	
+}
+.news .n_center li{
+	float: left;
+	width: 206px;
+	height: 135px;
+	overflow: hidden;
+	position: relative;
+	margin: 16px 16px 0 0;
+}
+.news .n_center li.x{
+	margin: 16px 0 0 0;
+}
+.news .n_center li span{
+	left: 0;
+	bottom: 0;
+	z-index: 1;
+	width: 206px;
+	height: 28px;
+	display: block;
+	position: absolute;
+	background: #000;
+	opacity: 0.6;
+}
+.news .n_center li a.t{
+	width: 200px;
+	text-align: center;
+	left: 0;
+	bottom: 0;
+	z-index: 2;
+	color: #fff;
+	height: 24px;
+	display: block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	position: absolute;
+	font: 400 12px/24px "微软雅黑";
+}
+.news .n_center li a.t:hover{
+	color: #9c3;
+}
+.news .n_right ul{
+	margin: 7px 0;
+}
+.news .n_right li{
+	cursor: pointer;
+	height: 20px;
+	font: 400 14px/20px "微软雅黑";
+	border-bottom: 1px dashed #eee;
+	padding: 9px 0;
+}
+.news .n_right li i{
+	background: #f30;
+	height: 20px;
+	width: 20px;
+	color: #fff;
+	top: -2px;
+	text-align: center;
+	font: 400 12px/20px tahoma;
+}
+.news .n_right li i.a{
+	background: #f60;
+}
+.news .n_right li i.b{
+	background: #f90;
+}
+.news .n_right li i.c{
+	background: #ccc;
+}
+.news .n_right label,
+.news .n_right li.fixed span a,
+.news .n_right li.fixed span a.x {
+	display: none;
+}
+.news .n_right li span a.x,
+.news .n_right li label em a.c{
+	float: right;
+	color: #fff;
+	display: block;
+	background: #9c3;
+	width: 70px;
+	text-align: center;
+	height: 20px;
+	font: 400 14px/20px "微软雅黑";
+	border: 0;
+	border-radius: 3px;
+}
+.news .n_right li span a.x:hover,
+.news .n_right li label em a.c:hover{
+	color: #fff;
+	background:#f90 ;
+}
+.news .n_right li span a:hover{color: #9c3;}
+
+.news .n_right li.fixed{
+	height: 73px;
+	padding: 10px 0;
+}
+.news .n_right li label{vertical-align: middle;}
+
+.news .n_right li label img{
+	float: left;
+	width: 103px;
+	height: 65px;
+} 
+.news .n_right li label em{
+	float: left;
+	margin-left: 16px;
+	font: 400 14px/20px "微软雅黑";
+} 
+.news .n_right li label em a{
+	display: block;
+	border:0
+}
+
+.news .n_right li label em a:hover{color: #9c3;}
+
+.news .n_right li label em a.y{
+	color: #666;
+	font-size: 12px;
+}
+.news .n_right li.fixed label{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.news .n_right li label em a.c{margin-top: 5px;}
+
+.video {margin-bottom: 16px;}
+.video li{
+	float: left;
+	margin: 16px 16px 0 0;
+}
+.video li a{
+	width: 229px;
+	height: 142px;
+	overflow: hidden;
+	position: relative;
+	display: block;
+}
+.video li em,
+.video li span{
+	left: 0;
+	bottom: 0;
+	z-index: 1;
+	width: 100%;
+	height: 28px;
+	display: block;
+	position: absolute;
+	background:#000;
+	opacity: 0.6;
+}
+.video li span{
+	z-index: 9;
+	height: 144px;
+	opacity: 0.6;
+}
+.video li p{
+	width: 220px;
+	text-align: center;
+	left: 0;
+	bottom: 0;
+	z-index: 2;
+	color: #fff;
+	display: block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	position: absolute;
+	font: 400 12px/28px "微软雅黑";
+}
+.video li label.a{
+	cursor: pointer;
+	top: 50%;
+	left: 50%;
+	margin: -30px 0 0 -30px ;
+	z-index: 9;
+	width: 60px;
+	height: 60px;
+	display: block;
+	position: absolute;
+	background: url(../img/v.png) no-repeat;
+}
+.video li label i{
+	cursor: pointer;
+	z-index: 9;
+	border-style: solid;
+	border-width: 13px;
+	border-color: transparent  transparent  transparent #fff;
+	background: none; 
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -13px 0 0 -4px;
+}
+.video li label i.x{
+	margin: -8px 0 0 -2px;
+	z-index: 10;
+	left: 50%;
+	top: 50%;
+	border-color: transparent  transparent  transparent #000;
+	border-width: 8px;
+}
+.video li.first p{width: 454px;}
+.video li.x{margin: 16px 0 0 0;}
+
+.video li.first a,
+.video li.first span{
+	height: 300px;
+	width: 454px;
+}
+.video li a:hover span{
+	opacity: 0.3;
+}
+.video li a:hover label.a{
+	position: absolute;
+	-webkit-transform: rotate(360deg);
+	transform: rotate(360deg);
+	-webkit-transition:all 1.6s ease-out ;
+	transition:all 1.6s ease-out ;
+}
+/*图片*/
+.photo ul{
+	height: 432px;
+	position: relative;
+	margin-bottom: 16px;
+}
+.photo li{
+	float: left;
+	margin: 16px 16px 0 0 ;
+	width: 185px;
+	height: 150px;
+	overflow: hidden;
+}
+.photo li.f{
+	width: 386px;
+	height:416px;
+}
+.photo li.o{
+	width: 386px;
+	height: 250px;
+}
+.photo li.t{
+	left: 0;
+	bottom: 0;
+	position: absolute;
+}
+.photo li.h{
+	left: 201px;
+	bottom: 0;
+	position: absolute;
+}
+.photo li.x{
+	margin: 16px 0 0 0;
+}
+
+
+#corp{
+	background: #333;
+}
+#corp .corp{
+	width: 1190px;
+	padding: 20px 0;
+	margin: 0 auto;
+}
+#corp .corp ul{
+	float: left;
+	width: 180px;
+}
+#corp .corp ul h3{
+	font: 400 18px/50px "微软雅黑";
+}
+#corp .corp ul h3 a{
+	color: #9c3;
+}
+#corp .corp ul li a{
+	font: 400 14px/24px "微软雅黑";
+	color: #ccc;
+}
+#corp .corp ul li a:hover,
+#corp .corp ul.qrcode a:hover{
+	color: #F75655;
+}
+#corp .corp ul.qrcode{
+	float: right;
+	width: 348px;
+	margin-top: 10px;
+	height: 130px;
+	overflow: hidden;
+}
+
+#corp .corp ul.qrcode a{
+	float: left;
+	display: block;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	margin-left: 16px;
+	border: 0;
+	font: 400 14px/20px "微软雅黑";
+}
+#footer {
+	background: #141414;
+}
+#footer .footer{
+	padding: 16px 0;
+	width: 1190px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#footer .footer p{
+	color: #666;
+	font: 400 14px/30px "微软雅黑";
+}
+#footer .footer ul {
+	margin: 0 auto;
+	width: 340px;
+	height: 35px;
+}
+#footer .footer ul li{
+	float: left;
+	margin-right:16px ;
+}

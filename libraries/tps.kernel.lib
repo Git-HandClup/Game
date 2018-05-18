@@ -1,0 +1,147 @@
+<?php
+class kernel{
+	private $para;
+	public $result;
+	
+	private function item(){
+		if(empty($this->para->base->field))
+			$this->para->base->field = ' * ';
+		
+		$this->para->tmp->sql = 'select '.$this->para->base->field.' from `@db__'.$this->para->base->tab.'` ';
+		if(!empty($this->para->base->cond)){
+			$this->para->tmp->sql .= ' where '.$this->para->base->cond;
+		}
+		if(!empty($this->para->base->order)){
+			if(is_array($this->para->base->order))
+				$this->para->base->order = implode(',',$this->para->base->order);
+			//$this->para->base->order = implode(',',$this->para->base->order);
+			$this->para->tmp->sql .= ' order by '.$this->para->base->order;
+		}
+		if(!empty($this->para->base->num))
+			$this->para->tmp->sql .= ' limit '.$this->para->base->num;
+		if(empty($this->para->base->method))
+			$this->para->base->method='select';
+		$this->para->dbo->query($this->para->tmp->sql,$this->para->base->method);
+		$this->result = $this->para->dbo->result;
+	}
+	//分页用的查询
+	private function itemlist(){
+		if(empty($this->para->base->field))
+			$this->para->base->field=' * ';
+		$this->para->tmp->sql = 'select '.$this->para->base->field.' from `@db__'.$this->para->base->tab.'`';
+		if(!empty($this->para->base->cond))
+			$this->para->tmp->sql .=' where '.$this->para->base->cond;
+		$this->para->dbo->query($this->para->tmp->sql,'rows');
+		$this->result->rcount = $this->para->dbo->result->total;
+		if(is_array($this->para->base->order)){
+			$this->para->base->order = implode(',',$this->para->base->order);
+			$this->para->tmp->sql .= ' order by '.$this->para->base->order;
+		}
+		if(empty($this->para->base->psize))
+			$this->para->base->psize = 16;
+		
+		$this->result->pcount = ceil($this->result->rcount   / $this->para->base->psize);
+		
+		if($this->para->base->page > $this->result->pcount)
+			$this->para->base->page = $this->result->pcount;
+		if($this->para->base->page <= 0)
+			$this->para->base->page = 1;
+		$this->para->tmp->sql .= ' limit '.(($this->para->base->page - 1) * $this->para->base->psize).','.$this->para->base->psize;
+		//limit 0,16
+		$this->para->dbo->query($this->para->tmp->sql);
+		$this->result->data=$this->para->dbo->result->data;
+
+	}
+	private function relation(){
+		if(empty($this->para->base->field))
+			$this->para->base->field = 'a.*,b.*';
+		
+		$this->para->tmp->sql = 'select '.$this->para->base->field.' from `@db__'.$this->para->base->tab.'` as a left join `@db__'.$this->para->base->tab.'_data` as b on a.id=b.aid';
+		
+		if(!empty($this->para->base->cond))
+			$this->para->tmp->sql .=' where '.$this->para->base->cond;
+		
+		if(is_array($this->para->base->order))
+			$this->para->tmp->sql .= ' order by '.implode(',',$this->para->base->order);
+		
+		if(!empty($this->para->base->num ))
+			$this->para->tmp->sql .= ' limit '.$this->para->base->num;
+		if(empty($this->para->base->method ))
+			$this->para->base->method = 'select';
+		$this->para->dbo->query($this->para->tmp->sql,$this->para->base->method);
+		$this->result = $this->para->dbo->result;
+	}
+	public function node($id,$rn=array()){
+		global $dbo;
+		
+		$this->para = new stdclass;
+		$this->para->sql= 'select id,cid,title from @db__catalog where id='.$id.' limit 1';
+		$dbo->query($this->para->sql,'single');
+	
+		$this->para->total = $dbo->result->total;
+		if($this->para->total>0){
+			$rn[] =$dbo->result->data->title ;
+			return $this->node($dbo->result->data->cid,$rn);
+		}else 
+			return implode(' -> ',array_reverse($rn));
+		//反转，第一个下标的内容到最后一个
+	}
+	public function typeid($id)
+    {
+        global $dbo;
+        $rn=array();
+        $this->para=new stdclass;
+        $this->para->sql='select id,cid from @db__catalog where id='.$id.' limit 1';
+        $dbo->query($this->para->sql,'single');
+        $this->para->total=$dbo->result->total;
+        if($this->para->total>0)
+        {
+            $this->para->cid=$dbo->result->data->cid;
+            if($this->para->cid==0)
+            {
+                $this->para->sql='select id,cid,title from @db__catalog where cid='.$id.'';
+                $dbo->query($this->para->sql);
+                $this->para->total=$dbo->result->total;
+                if($this->para->total>0)
+                {
+                    foreach($dbo->result->data as $k => $v)
+                    {
+                        $rn[]=$v->id;
+                    }
+                }
+                else
+                    $rn[]=$id;
+            }
+            else
+                $rn[]=$id;
+        }
+        else
+            $rn[]=$id;
+        return implode(',',$rn);
+    }
+    public function category($id){
+	    global $dbo;
+	    $rn=$id;
+	    $this->para=new stdclass;
+	    $this->para->sql='select id,cid,title from @db__catalog where id='.$id.' limit 1';
+	    $dbo->query($this->para->sql,'single');
+	    $this->para->cid=$dbo->result->data->cid;
+	    if($this->para->cid==0)
+	        return $rn;
+	    else{
+	        $rn=$this->para->cid;
+	        return $rn;
+        }
+    }
+	public function run($get,$method='item'){
+		global $dbo,$cfg,$tool;
+		$this->para =$get;
+		$this->para->dbo = $dbo;
+		$this->para->cfg = $cfg;
+		$this->para->tool = $tool;
+		$this->para->tmp = new stdclass;
+		$this->result=new stdClass;
+		$this->$method();
+	}
+}
+?>

@@ -1,0 +1,122 @@
+﻿body, html
+{
+        overflow: hidden;
+        margin: 0px;
+        padding: 0px;
+        font-size: 12px;
+        background: url(images/head.gif) repeat-x 0 0;
+        font-family: verdana,arial,helvetica,sans-serif, "宋体";
+}
+i,tt
+{
+        color:#999;
+        font-style:normal
+}
+#top
+{
+        height: 100px;
+        overflow:hidden;
+        background: url(images/top.gif) repeat-x;
+}
+#top .logos
+{
+        float: left;
+        width: 170px;
+        height: 100px;
+        background: url(images/logo.gif) no-repeat center;
+}
+#top .menus
+{
+        float: left;
+        height: 100px;
+}
+#top .menus .ucenter
+{
+        height: 56px;
+        margin-top: 8px;
+        position:relative;
+}
+#top .menus .ucenter .tipsinfo
+{
+        top:52px;
+        left:480px;
+        height:30px;
+        margin:0 auto;
+        text-align:left;
+        padding:0 30px;
+        line-height:30px;
+        position:absolute;
+        border:1px solid #369;
+        background:#fffff1
+}
+#top .menus .ucenter .tipsinfo a
+{
+        color:#f00;
+        margin:0 4px;
+        font-weight:700
+}
+#top .menus .ucenter span,#top .menus .ucenter span.pwd
+{
+        color: #369;
+        float: right;
+        display: block;
+        margin-left: 6px;
+        line-height: 22px;
+        cursor: pointer;
+}
+#top .menus .ucenter .uname
+{
+        font-weight: 700;
+        margin: 0 8px;
+}
+#top .menus .ucenter .uname #uid
+{
+        color: red;
+}
+#top .menus .ucenter .refresh, #top .menus .ucenter .exit,#top .menus .ucenter span.pwd
+{
+        color: white;
+        border: 0;
+        width: 64px;
+        height: 21px;
+        text-align: center;
+        background: url(images/btn.gif) no-repeat;
+}
+#top .menus .ucenter .myhome, #top .menus .ucenter .forum
+{
+        border: 0;
+        width: 89px;
+        height: 21px;
+        background: url(images/home.gif) no-repeat;
+}
+#top .menus .ucenter .forum
+{
+        background: url(images/forum.gif) no-repeat;
+}
+#top .menus .tabitem
+{
+        height: 33px;
+}
+#top .menus .tabitem a
+{
+        color: #369;
+        float: left;
+        display: block;
+        width: 110px;
+        height: 33px;
+        line-height: 30px;
+        font-weight: 700;
+        text-align: center;
+        padding-left: 7px;
+        font-size: 14px;
+        text-decoration: none;		
+}
+#top .menus .tabitem a.fixed
+{
+        color: white;
+        background: url(images/tab.gif) no-repeat;
+}
+.mipt
+{
+        background:url(images/ddl.gif) no-repeat
+}

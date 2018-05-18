@@ -1,0 +1,29 @@
+<?php
+class system{
+	private $para;
+	private function setup(){
+		$this->para->tmp->fb = fopen($this->para->tmp->path['config'].'tps.'.$this->para->get->tab.'.config','wb');
+		fwrite(
+			$this->para->tmp->fb,
+			"<?php\nreturn \n". var_export(json_decode(json_encode($this->para->post),true),true)."\n?>"
+		);
+		fclose($this->para->tmp->fb);
+		$this->para->tool->showmsg(
+			'200',
+			$this->para->lng[$this->para->get->tab][$this->para->get->c],
+			$this->para->get->m
+		);
+	}
+	public function run($get,$method ='setup'){
+		global $tool,$cfg;
+		$this->para = new stdclass;
+		$this->para = $get;
+		$this->para->tmp = new stdclass;
+		$this->para->msg = new stdclass;
+		$this->para->tool = $tool;
+		$this->para->tmp->path = $cfg->path;
+		$this->para->lng= $cfg->language['system'];
+		$this->$method();
+	}
+}
+?>

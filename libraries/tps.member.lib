@@ -1,0 +1,62 @@
+<?php
+class member{
+	private $para;
+	public function __construct(){
+		global $dbo;
+		$this->para = new stdclass;
+		$this->para->dbo = $dbo;
+	}
+	private function login(){
+		$this->para->tmp->uname = $this->para->get->get->uid;
+		$this->para->tmp->pwd =$this->para->get->get->pwd;
+		$this->para->tmp->tab = $this->para->get->get->tab;
+		$this->para->tmp->cond =" username='". $this->para->tmp->uname."' and password='".$this->para->tmp->pwd."'";
+		$this->para->tmp->sql = 'select * from `@db__'.$this->para->tmp->tab.'` where '.$this->para->tmp->cond;
+		$this->para->dbo->query($this->para->tmp->sql,'single');
+		if($this->para->dbo->result->total>0)
+		{
+			$this->para->user = new stdclass;
+			$this->para->user->tab = $this->para->get->get->tab;
+			$this->para->user->cond = 'id='.$this->para->dbo->result->data->id;
+			$this->para->user->str = new stdclass;
+			$this->para->user->str->logintotal = $this->para->dbo->result->data->logintotal +1;
+			$this->para->user->str->udatetimes = time();
+			$this->para->user->str->ipaddress = $_SERVER['REMOTE_ADDR'];
+			$this->para->dbo->query($this->para->user,'update');
+			setcookie($this->para->get->get->tab,json_encode($this->para->dbo->result->data),time() + 3600 * 24 * 30);
+			$this->para->msg->code = '200';
+			$this->para->msg->url = $this->para->get->get->url;
+			$this->para->msg->skin = 'url(skin/manage/images/suc.gif) no-repeat 0 6px';
+			$this->para->msg->tip =$this->para->lng[$this->para->get->get->tab][$this->para->get->get->c]['suc'];
+			
+		}
+		else {
+			$this->para->msg->code = '300';
+			$this->para->msg->url = '';
+			$this->para->msg->skin = 'url(skin/manage/images/err.gif) no-repeat 0 6px';
+			$this->para->msg->tip =$this->para->lng[$this->para->get->get->tab][$this->para->get->get->c]['err'];
+		}
+		$this->para->tool->showtip($this->para->msg);
+	}
+	private function clear(){
+		$this->para->tmp->tab=$this->para->get->get->tab;
+		$this->para->tmp->cond= 'id='.$this->para->get->get->id;
+		$this->para->tmp->method=$this->para->get->get->c;
+		$this->para->dbo->query($this->para->tmp,$this->para->tmp->method);
+		if($this->para->dbo->result->total >0)
+			echo $this->para->lng[$this->para->get->get->tab][$this->para->get->get->c]['suc'];
+		else 
+			echo $this->para->lng[$this->para->get->get->tab][$this->para->get->get->c]['err'];
+	}
+	public function run($get,$method='login'){
+		global $dbo,$tool,$cfg;
+		$this->para->get = $get;
+		$this->para->dbo = $dbo;
+		$this->para->lng = $cfg->language['member'];
+		$this->para->tool = $tool;
+		$this->para->tmp = new stdclass;
+		$this->para->msg = new stdclass;
+		$this->$method();
+	}
+}
+?>

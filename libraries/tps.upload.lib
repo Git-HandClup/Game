@@ -1,0 +1,89 @@
+<?php
+class upload{
+	private $para;
+	private function check(){
+		if($this->para->files->{$this->para->get->form}['error']>0){
+			exit(
+				$this->para->tool->showmsg(
+					'300',
+					$this->para->lng['error']
+				)
+			);
+		}else{
+		//获取
+			$this->para->tmp->ext = $this->para->tool->ext($this->para->files->{$this->para->get->form}['name']);
+			if(in_array($this->para->tmp->ext,explode('|',$this->para->cfg['cfg_attach_imgtype']))){
+				if($this->para->files->{$this->para->get->form}['size'] > $this->para->cfg['cfg_attach_maxsize']){
+					exit(
+						$this->para->tool->showmsg(
+							'300',
+							$this->para->lng['size']
+						)
+					);
+				}
+			}else if(in_array($this->para->tmp->ext,explode('|',$this->para->cfg['cfg_attach_ftype']))){
+				if($this->para->files->{$this->para->get->form}['size'] > $this->para->cfg['cfg_attach_fsize']){
+					exit(
+						$this->para->tool->showmsg(
+							'300',
+							$this->para->lng['size']
+						)
+					);
+				}
+			}else{
+				exit(
+					$this->para->tool->showmsg(
+						'300',
+						$this->para->lng['type']
+					)
+				);
+			}
+		}
+	}
+	private function path(){
+		$this->para->tmp->kpath = dirname(__FILE__).'/..';
+		$this->para->tmp->path =$this->para->cfg['cfg_attach_upload'];
+		$this->para->tmp->path .= '/'.$this->para->get->type;
+		$this->para->tmp->path .= '/'. date($this->para->cfg['cfg_attach_path'],time());
+		//str_replace替换用的
+		$this->para->tmp->path = str_replace("\\",'/',$this->para->tmp->path);
+		$this->para->tmp->path = str_replace("//",'/',$this->para->tmp->path);
+		$this->para->tmp->xpath = explode('/',$this->para->tmp->path);
+		foreach($this->para->tmp->xpath as $x){
+			$this->para->tmp->kpath .='/'. $x; 
+			if(!file_exists($this->para->tmp->kpath))
+				mkdir($this->para->tmp->kpath);
+		}
+		if($this->para->cfg['cfg_attach_name'] == 'date')
+			$this->para->tmp->path .= '/'.date('dhis',time()).'.'.$this->para->tmp->ext;
+		else if($this->para->cfg['cfg_attach_name'] == 'md5')
+			$this->para->tmp->path .= '/'.md5(time()).'.'.$this->para->tmp->ext;
+		else
+			$this->para->tmp->path .= '/'.$this->para->files->{$this->para->get->form}['name'];
+	}
+	private function form(){
+		$this->check();
+		$this->path();
+		move_uploaded_file($this->para->files->{$this->para->get->form}['tmp_name'],dirname(__FILE__).'/../'.$this->para->tmp->path);
+		$this->para->tmp->path = '/'.$this->para->tmp->path;
+		$this->para->tool->showmsg(
+			'200',
+			'',
+			$this->para->get->field,
+			$this->para->get->form,
+			'',
+			$this->para->tmp->path
+		);
+	}
+	public function run($get,$method = 'form'){
+		global $tool,$cfg;
+		$this->para = $get;
+		$this->para->tmp = new stdclass;
+		$this->para->msg = new stdclass;
+		$this->para->cfg = $cfg->attach;
+		$this->para->tool = $tool;
+		$this->para->lng = $cfg->language['upload'];
+		$this->$method();
+	}
+}
+?>

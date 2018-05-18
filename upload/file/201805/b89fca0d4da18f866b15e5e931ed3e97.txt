@@ -1,0 +1,53 @@
+<body>
+    <form action="test_2.php" enctype="multipart/form-data" method="post">
+       <input type="file" name="file_1" id="file" value="">
+        <input type="submit" id="submit" name="submit" value="提交" disabled="disabled">
+    </form>
+    <img src="" alt="" width="200" height="200">
+    <div style="overflow-y:scroll;;border:1px solid black;width:500px;height:200px" contenteditable="true">可以编辑里面的内容</div>
+    <p></p>
+</body>
+<script>
+    $("#file").on("change",function () {
+        var img=geturl(this.files[0]);
+        if(img){
+        $("div").append("<img height='100' width='100' src="+img+">");
+        $(this).val("");
+        }
+        function geturl(file)
+        {
+            var url=null;
+            if(window.createObjectURL!=undefined)
+            {
+                url=window.createObjectURL(file);
+            }else if(window.URL!=undefined)
+            {
+                url=window.URL.createObjectURL(file);
+            }else if(window.webkitURL!=undefined)
+            {
+                url=window.webkitURL.createObjectURL(file);
+            }
+            return url;
+        }
+        var fp = $("#file");
+        var lg = fp[0].files.length; // get length
+        var items = fp[0].files;
+        if (lg > 0) {
+            for (var i = 0; i < lg; i++) {
+                var fileName = items[i].name; // get file name
+                var fileSize = items[i].size; // get file size
+                var fileType = items[i].type; // get file type
+            }
+            if(fileType!="image/jpeg"&&fileType!="image/png")
+            {
+                $("p").html("不支持这种类型");
+                $("#submit").attr("disabled","disabled");
+            }
+            else
+            {
+                $("p").html("可以上传");
+                $("#submit").removeAttr("disabled");
+            }
+        }
+    })
+</script>

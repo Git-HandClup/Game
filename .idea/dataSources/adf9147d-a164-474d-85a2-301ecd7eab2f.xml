@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="tp_gamex@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="tp_gamex">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="acfun"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="test"/>
+    <schema id="8" parent="1" name="web_dj"/>
+    <schema id="9" parent="1" name="wordpress"/>
+    <table id="10" parent="2" name="gem_catalog">
+      <Comment>频道节点，栏目，分类表</Comment>
+    </table>
+    <table id="11" parent="2" name="gem_evaluate"/>
+    <table id="12" parent="2" name="gem_evaluate_data"/>
+    <table id="13" parent="2" name="gem_gamebox"/>
+    <table id="14" parent="2" name="gem_master">
+      <Comment>管理员多户表</Comment>
+    </table>
+    <table id="15" parent="2" name="gem_news"/>
+    <table id="16" parent="2" name="gem_news_data">
+      <Comment>新闻资讯内容表</Comment>
+    </table>
+    <table id="17" parent="2" name="gem_photo"/>
+    <table id="18" parent="2" name="gem_photo_data"/>
+    <table id="19" parent="2" name="gem_role"/>
+    <table id="20" parent="2" name="gem_technique"/>
+    <table id="21" parent="2" name="gem_technique_data"/>
+    <table id="22" parent="2" name="gem_video"/>
+    <table id="23" parent="2" name="gem_video_data"/>
+    <view id="24" parent="2" name="gamebox_view">
+      <Comment>VIEW</Comment>
+    </view>
+    <column id="25" parent="10" name="id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>tinyint(3) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="10" name="cid">
+      <Position>2</Position>
+      <Comment>父节点</Comment>
+      <DataType>tinyint(3) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="27" parent="10" name="fid">
+      <Position>3</Position>
+      <Comment>栏目状态</Comment>
+      <DataType>tinyint(3) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="28" parent="10" name="pid">
+      <Position>4</Position>
+      <Comment>栏目排序号</Comment>
+      <DataType>tinyint(3) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="29" parent="10" name="total">
+      <Position>5</Position>
+      <DataType>smallint(6)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="30" parent="10" name="type">
+      <Position>6</Position>
+      <DataType>set(&apos;video&apos;, &apos;news&apos;, &apos;game&apos;, &apos;evaluate&apos;, &apos;photo&apos;, &apos;technique&apos;)|0</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="31" parent="10" name="title">
+      <Position>7</Position>
+      <Comment>栏目名称</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="32" parent="10" name="seotitle">
+      <Position>8</Position>
+      <Comment>栏目优化标题</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="33" parent="10" name="keyword">
+      <Position>9</Position>
+      <Comment>栏目关键字</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="34" parent="10" name="keydesc">
+      <Position>10</Position>
+      <Comment>栏目描述</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="35" parent="10" name="litpic">
+      <Position>11</Position>
+      <Comment>栏目图片</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <key id="36" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="37" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>mediumint(8) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="38" parent="11" name="cid">
+      <Position>2</Position>
+      <DataType>tinyint(3) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="11" name="title">
+      <Position>3</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="40" parent="11" name="stitle">
+      <Position>4</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="41" parent="11" name="author">
+      <Position>5</Position>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="42" parent="11" name="source">
+      <Position>6</Position>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="43" parent="11" name="litpic">
+      <Position>7</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="44" parent="11" name="keyword">
+      <Position>8</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="45" parent="11" name="keydesc">
+      <Position>9</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="46" parent="11" name="cdatetimes">
+      <Position>10</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="47" parent="11" name="udatetimes">
+      <Position>11</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="48" parent="11" name="hits">
+      <Position>12</Position>
+      <DataType>mediumint(8) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="49" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="50" parent="12" name="aid">
+      <Position>1</Position>
+      <DataType>mediumint(8) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="51" parent="12" name="content">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <key id="52" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>aid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="53" parent="13" name="id">
+      <Position>1</Position>
+      <Comment>游戏ID</Comment>
+      <DataType>mediumint(9)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="54" parent="13" name="cid">
+      <Position>2</Position>
+      <Comment>游戏栏目ID</Comment>
+      <DataType>tinyint(3) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="55" parent="13" name="fid">
+      <Position>3</Position>
+      <Comment>游戏状态</Comment>
+      <DataType>set(&apos;t&apos;, &apos;r&apos;, &apos;f&apos;, &apos;h&apos;)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="56" parent="13" name="title">
+      <Position>4</Position>
+      <Comment>游戏名称</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="57" parent="13" name="platform">
+      <Position>5</Position>
+      <Comment>游戏运营商
+</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="58" parent="13" name="litpic">
+      <Position>6</Position>
+      <Comment>游戏缩略图</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="59" parent="13" name="banner">
+      <Position>7</Position>
+      <Comment>游戏专区背景图</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="60" parent="13" name="url">
+      <Position>8</Position>
+      <Comment>游戏下载或试玩地址</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="61" parent="13" name="keyword">
+      <Position>9</Position>
+      <Comment>优化关键字</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="62" parent="13" name="keydesc">
+      <Position>10</Position>
+      <Comment>优化的描述</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="63" parent="13" name="cdatetimes">
+      <Position>11</Position>
+      <Comment>游戏创建时间</Comment>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="64" parent="13" name="udatetimes">
+      <Position>12</Position>
+      <Comment>游戏上传时间</Comment>
+      <DataType>int(10) unsigned|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="65" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="66" parent="14" name="id">
+      <Position>1</Position>
+      <Comment>管理员ID</Comment>
+      <DataType>tinyint(3) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="67" parent="14" name="role">
+      <Position>2</Position>
+      <Comment>角色ID</Comment>
+      <DataType>tinyint(3) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="14" name="username">
+      <Position>3</Position>
+      <Comment>账号</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="14" name="password">
+      <Position>4</Position>
+      <Comment>密码</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="14" name="logintotal">
+      <Position>5</Position>
+      <Comment>登录次数</Comment>
+      <DataType>smallint(5) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="71" parent="14" name="cdatetimes">
+      <Position>6</Position>
+      <Comment>创建时间</Comment>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="72" parent="14" name="udatetimes">
+      <Position>7</Position>
+      <Comment>最后登录时间</Comment>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="73" parent="14" name="ipaddress">
+      <Position>8</Position>
+      <Comment>最后一次登录的ip地址</Comment>
+      <DataType>varchar(16)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="74" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="75" parent="15" name="id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>mediumint(8) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="76" parent="15" name="cid">
+      <Position>2</Position>
+      <Comment>频道栏目节点</Comment>
+      <DataType>tinyint(3) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="77" parent="15" name="title">
+      <Position>3</Position>
+      <Comment>资讯标题</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="78" parent="15" name="stitle">
+      <Position>4</Position>
+      <Comment>资讯短标题</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="79" parent="15" name="author">
+      <Position>5</Position>
+      <Comment>文章作者</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="80" parent="15" name="source">
+      <Position>6</Position>
+      <Comment>文章来源</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="81" parent="15" name="litpic">
+      <Position>7</Position>
+      <Comment>信息缩略图</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="82" parent="15" name="keyword">
+      <Position>8</Position>
+      <Comment>信息关键字</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="83" parent="15" name="keydesc">
+      <Position>9</Position>
+      <Comment>信息描述</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="84" parent="15" name="cdatetimes">
+      <Position>10</Position>
+      <Comment>信息发布日期</Comment>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="85" parent="15" name="udatetimes">
+      <Position>11</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="86" parent="15" name="hits">
+      <Position>12</Position>
+      <Comment>信息点击率</Comment>
+      <DataType>mediumint(8) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="87" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <trigger id="88" parent="15" name="lc_news_insert">
+      <Turn>after-row</Turn>
+      <Events>I</Events>
+    </trigger>
+    <trigger id="89" parent="15" name="lc_news_delete">
+      <Turn>after-row</Turn>
+      <Events>D</Events>
+    </trigger>
+    <column id="90" parent="16" name="aid">
+      <Position>1</Position>
+      <DataType>mediumint(8) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="91" parent="16" name="content">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <key id="92" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>aid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="93" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>mediumint(8) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="94" parent="17" name="cid">
+      <Position>2</Position>
+      <DataType>tinyint(3) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="95" parent="17" name="title">
+      <Position>3</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="96" parent="17" name="stitle">
+      <Position>4</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="97" parent="17" name="author">
+      <Position>5</Position>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="98" parent="17" name="source">
+      <Position>6</Position>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="99" parent="17" name="litpic">
+      <Position>7</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="100" parent="17" name="keyword">
+      <Position>8</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="101" parent="17" name="keydesc">
+      <Position>9</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="102" parent="17" name="cdatetimes">
+      <Position>10</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="103" parent="17" name="udatetimes">
+      <Position>11</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="104" parent="17" name="hits">
+      <Position>12</Position>
+      <DataType>mediumint(8) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="105" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="106" parent="18" name="aid">
+      <Position>1</Position>
+      <DataType>mediumint(8) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="107" parent="18" name="content">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <key id="108" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>aid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="109" parent="19" name="id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>tinyint(3) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="110" parent="19" name="rolename">
+      <Position>2</Position>
+      <Comment>角色名</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="111" parent="19" name="rule">
+      <Position>3</Position>
+      <Comment>规则列表</Comment>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="112" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="113" parent="20" name="id">
+      <Position>1</Position>
+      <DataType>mediumint(8) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="114" parent="20" name="cid">
+      <Position>2</Position>
+      <DataType>tinyint(3) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="115" parent="20" name="title">
+      <Position>3</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="116" parent="20" name="stitle">
+      <Position>4</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="117" parent="20" name="author">
+      <Position>5</Position>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="118" parent="20" name="source">
+      <Position>6</Position>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="119" parent="20" name="litpic">
+      <Position>7</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="120" parent="20" name="keyword">
+      <Position>8</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="121" parent="20" name="keydesc">
+      <Position>9</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="122" parent="20" name="cdatetimes">
+      <Position>10</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="123" parent="20" name="udatetimes">
+      <Position>11</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="124" parent="20" name="hits">
+      <Position>12</Position>
+      <DataType>mediumint(8) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="125" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="126" parent="21" name="aid">
+      <Position>1</Position>
+      <DataType>mediumint(8) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="127" parent="21" name="content">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <key id="128" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>aid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="129" parent="22" name="id">
+      <Position>1</Position>
+      <DataType>mediumint(8) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="130" parent="22" name="cid">
+      <Position>2</Position>
+      <DataType>tinyint(3) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="131" parent="22" name="title">
+      <Position>3</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="132" parent="22" name="stitle">
+      <Position>4</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="133" parent="22" name="author">
+      <Position>5</Position>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="134" parent="22" name="source">
+      <Position>6</Position>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="135" parent="22" name="litpic">
+      <Position>7</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="136" parent="22" name="keyword">
+      <Position>8</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="137" parent="22" name="keydesc">
+      <Position>9</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="138" parent="22" name="cdatetimes">
+      <Position>10</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="139" parent="22" name="udatetimes">
+      <Position>11</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="140" parent="22" name="hits">
+      <Position>12</Position>
+      <DataType>mediumint(8) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="141" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="142" parent="23" name="aid">
+      <Position>1</Position>
+      <DataType>mediumint(8) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="143" parent="23" name="content">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <key id="144" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>aid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="145" parent="24" name="id">
+      <Position>1</Position>
+      <Comment>游戏ID</Comment>
+      <DataType>mediumint(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="146" parent="24" name="cid">
+      <Position>2</Position>
+      <Comment>游戏栏目ID</Comment>
+      <DataType>tinyint(3) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="147" parent="24" name="fid">
+      <Position>3</Position>
+      <Comment>游戏状态</Comment>
+      <DataType>set(&apos;t&apos;, &apos;r&apos;, &apos;f&apos;, &apos;h&apos;)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="148" parent="24" name="title">
+      <Position>4</Position>
+      <Comment>游戏名称</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="149" parent="24" name="platform">
+      <Position>5</Position>
+      <Comment>游戏运营商
+</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="150" parent="24" name="litpic">
+      <Position>6</Position>
+      <Comment>游戏缩略图</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="151" parent="24" name="banner">
+      <Position>7</Position>
+      <Comment>游戏专区背景图</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="152" parent="24" name="url">
+      <Position>8</Position>
+      <Comment>游戏下载或试玩地址</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="153" parent="24" name="keyword">
+      <Position>9</Position>
+      <Comment>优化关键字</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="154" parent="24" name="keydesc">
+      <Position>10</Position>
+      <Comment>优化的描述</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="155" parent="24" name="cdatetimes">
+      <Position>11</Position>
+      <Comment>游戏创建时间</Comment>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="156" parent="24" name="udatetimes">
+      <Position>12</Position>
+      <Comment>游戏上传时间</Comment>
+      <DataType>int(10) unsigned|0</DataType>
+    </column>
+  </database-model>
+</dataSource>

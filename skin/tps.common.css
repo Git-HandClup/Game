@@ -1,0 +1,188 @@
+html,body{
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+}
+a{outline: none;text-decoration: none;color: #666;}
+i,em,span,label,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-style: normal;
+}
+img{width: 100%;height: 100%;}
+.clear{
+	height: 0;
+	clear: both;
+	overflow: hidden;
+}
+i{
+	vertical-align: middle;
+	position: relative;
+	display: inline-block;
+	background: url(../img/ico.png) no-repeat;
+}
+#menu{
+	width: 100%;
+	height: 70px;
+	background: #1a1a1a;
+	z-index: 99;
+	position: fixed;
+}
+#menu .menu{
+	width: 1200px;
+	height: 70px;
+	margin: 0 auto;
+}
+#menu .menu .logo{
+	float:left;
+	width: 70px;
+	height: 70px;
+}
+#menu .menu .nav{
+	float: left;
+	margin: 0 10px 0 20px;
+}
+#banner{
+	width: 100%;
+	z-index: -99;
+	display: block;
+	height: 1080px;
+	background: #369 no-repeat center 70px ;
+}
+#wrap{
+	width: 1190px;
+	margin: -880px auto 0 auto;
+}
+#menu .menu .nav a{
+	font: 400 16px/70px "微软雅黑";
+	color: #fff;
+	width: 80px;
+	margin-right: 5px;
+	text-align: center;
+	float: left;
+	display: inline-block;
+}
+#menu .menu .nav a:hover,
+#menu .menu .nav .fixed{
+	color: #9c3;
+	background: #353535;
+}
+#menu .search{
+	float: left;
+	width: 230px;
+	height: 42px;
+	margin: 14px 0;
+}
+#menu .search select{
+	height: 40px;
+	float: left;
+	border: 0;
+}
+#menu .search input{
+	border: 0;
+	border-left: 1px solid #999;
+	float: left;
+	width: 120px;
+	height: 40px;
+	background: #fff;
+	padding: 0 5px;
+	font: 400 14px/40px "微软雅黑";
+}
+#menu .search a{
+	float: left;
+	width: 40px;
+	height: 40px;
+	text-indent: -99999px;
+	background: #90c41f url(../img/search.png) no-repeat center center;
+}
+#menu .ucenter{
+	float: right;
+	height: 26px;
+	padding: 22px 0;
+}
+#menu .ucenter a{
+	float: left;
+	display: block;
+}
+#menu .ucenter  .face{
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	margin-right: 15px;
+	background: #ccc;
+	overflow: hidden;
+}
+#menu .ucenter  .face img{
+	width: 100%;
+}
+#menu .ucenter .log,
+#menu .ucenter .reg{
+	color: #fff;
+	width: 60px;
+	height: 26px;
+	border-radius: 26px;
+	text-align: center;
+	background: #f75655;
+	font: 400 12px/26px "微软雅黑";
+}
+#menu .ucenter .log{
+	margin: 0 10px;
+}
+#menu .ucenter .reg{
+	background: #9c3;
+}
+.navtab{
+	height: 50px;
+	border-bottom: 1px solid #ddd;
+}
+.navtab h3{
+	font: 400 16px/50px "微软雅黑";
+	float: left;
+} 
+.navtab h3 a{
+	color: #9c3;
+}
+.navtab h3.more{
+	float: right;
+}
+.navtab h3.more a{
+	color: #999;
+	margin: 0 6px;
+	font: 400 14px/50px "微软雅黑";
+}
+.navtab h3.more a.more{
+	width: 18px;
+	height: 18px;
+	text-align: center;
+	display: inline-block;
+	border: 1px solid #ddd;
+	border-radius: 50%;
+	font:400 14px/18px tahoma;
+}
+.navtab h3.more a:hover{
+	color:#9c3 ;
+	border-bottom:1px solid #aaa;
+}
+.navtab h3.more a.more:hover{
+	color: #9c3;
+	border: 1px solid #9c3;
+}
+.page{
+    height:40px;
+    margin-top:16px;
+    text-align: center;
+    line-height: 40px;
+}
+.page a {
+    border-radius:3px;
+    border:1px solid #ccc;
+    padding:5px 12px;
+}
+.page a:hover,
+.page a.fixed{
+    background:#9c3;
+    border:1px solid #9c3;
+    color:#fff;
+    font-weight: 700;
+}

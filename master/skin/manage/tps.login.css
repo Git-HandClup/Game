@@ -1,0 +1,93 @@
+﻿/* CSS Document */
+body, html
+{
+        margin: 0px;
+        padding: 0px;
+        font-size: 12px;
+        font-family: verdana,arial,helvetica,sans-serif, "宋体";
+}
+/* 首页控制面板样式设置 */
+#logo
+{
+        width: 480px;
+        height: 68px;
+        margin: 0 auto;
+        background: url(images/logo.gif) no-repeat;
+}
+#login
+{
+        width: 100%;
+        height: 80px;
+        background: url(images/logbg.gif) repeat-x;
+}
+#login .ucenter
+{
+        width: 480px;
+        margin: 0 auto;
+}
+#login .ucenter dd
+{
+        clear:both;
+        margin:0;
+        line-height: 38px;
+}
+#login .ucenter dd label
+{
+        float: left;
+        color: white;
+        display: block;
+        width: 50px;
+        text-align: center
+}
+#login .ucenter dd input
+{
+        width: 120px;
+        color: #333;
+        margin-top:8px;
+        border: 1px solid #39c;
+        background: url(images/iptbg.gif) repeat-x;
+        font-family: verdana,arial,helvetica,sans-serif, "宋体";
+}
+#msg
+{
+        clear:both;
+        color:red;
+        width: 460px;
+        height: 30px;
+        margin: 0 auto;
+        padding-left:20px;
+        line-height:30px;
+}
+#oper
+{
+        width:480px;
+        height:auto;
+        margin:0 auto
+}
+#oper input
+{
+        float:left;
+        margin-right:6px;
+        cursor:pointer
+}
+#oper #submit,#oper #reset
+{
+        color:white;
+        border:0;
+        width:64px;
+        height:21px;
+        background:url(images/btn.gif) no-repeat
+}
+#oper #home
+{
+        border:0;
+        width:89px;
+        height:21px;
+        background:url(images/home.gif) no-repeat
+}
+#oper p
+{
+        clear:both;
+        color:#666;
+        line-height:30px
+}
